@@ -72,32 +72,32 @@
 
                         @can('categories.index')
                         <li class="{{ setActive('admin/category') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-folder"></i>
+                                href="{{ route('admin.category.index') }}"><i class="fas fa-folder"></i>
                                 <span>Kategori</span></a></li>
                         @endcan    
 
                         @can('topics.index')
                         <li class="{{ setActive('admin/topic') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-book-open"></i>
+                                href="{{ route('admin.topic.index') }}"><i class="fas fa-book-open"></i>
                                 <span>Topik</span></a></li>
                         @endcan
 
                         @can('problems.index')
                         <li class="{{ setActive('admin/problem') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-tags"></i> <span>Permasalahan</span></a>
+                                href="{{ route('admin.problem.index') }}"><i class="fas fa-tags"></i> <span>Permasalahan</span></a>
                         </li>
                         @endcan
  
                         @can('clusters.index')
                         <li class="{{ setActive('admin/cluster') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-bell"></i>
+                                href="{{ route('admin.cluster.index') }}"><i class="fas fa-bell"></i>
                                 <span>kluster Open Access</span></a></li>
                         @endcan
 
                                                 
                         @can('courses.index')
                         <li class="{{ setActive('admin/course') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-image"></i>
+                                href="{{ route('admin.course.index') }}"><i class="fas fa-image"></i>
                                 <span>Open Access</span></a></li>
                         @endcan
 

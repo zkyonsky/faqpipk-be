@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::post('/logout', \App\Http\Controllers\Auth\LogoutController::class)->name('logout')->middleware('auth');
+
 Auth::routes(['register' => false]);
 
 Route::prefix('admin')->group(function () {
@@ -23,6 +25,21 @@ Route::prefix('admin')->group(function () {
 
         //users
         Route::resource('/user', App\Http\Controllers\Admin\UserController::class, ['except' => ['show'] ,'as' => 'admin']);
+
+        //categories
+        Route::resource('/category', App\Http\Controllers\Admin\CategoryController::class, ['except' => 'show' ,'as' => 'admin']);
+
+        //topics
+        Route::resource('/topic', App\Http\Controllers\Admin\TopicController::class, ['except' => 'show' ,'as' => 'admin']);
+
+        //problems
+        Route::resource('/problem', App\Http\Controllers\Admin\ProblemController::class, ['except' => 'show' ,'as' => 'admin']);
+
+        //cluster
+        Route::resource('/cluster', App\Http\Controllers\Admin\ClusterController::class, ['except' => 'show' ,'as' => 'admin']);
+
+        //courses
+        Route::resource('/course', App\Http\Controllers\Admin\CourseController::class, ['except' => 'show' ,'as' => 'admin']);
     });
 
 });
