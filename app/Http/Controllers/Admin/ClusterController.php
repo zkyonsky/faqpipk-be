@@ -32,7 +32,7 @@ class ClusterController extends Controller
             $clusters = $clusters->where('name', 'like', '%'. request()->q . '%');
         })->paginate(10);
 
-        return view('admin.Cluster.index', compact('clusters'));
+        return view('admin.cluster.index', compact('clusters'));
     }
 
     /**
